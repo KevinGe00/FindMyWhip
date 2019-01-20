@@ -10,27 +10,85 @@
         #title {
             text-align: center;
             margin: 5px;
+            margin-top: 0;
             margin-bottom: 20px;
             font-size: 500%;
             font-weight: bold;
         }
+        #grey {
+            background-color: #F0FAF8;
+            padding: 0;
+        }
+        #body {
+            padding: 0;
+            background-color: #F0FAF8;
+        }
+
         #button {
             font-size: 300%;
             position: relative;
-            top: 50px;
+            margin-bottom: 20px;
+        }    
+        #photo {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+        .col-12 {
+            padding: 0;
+        }
+        .row {
+            margin: 0;
+        }
+        #info {
+            font-weight: bold;
+            font-size: 80%;
+            text-align: center;
+        }
+        #hr {
+            margin-bottom: 0;
+        }
+        @media (max-width: 768px) {
+            #button {
+                font-size: 200%;
+                position: relative;
+                top: 45px;
+                height: 200px;
+            }
+            .container {
+                position: relative;
+                top: 63px;
+            }
+
         }
     </style>
 
-    <title>FindMyWhip</title>
+    <title>Find My Car</title>
 </head>
-<body>
- <h1 id='title'>Find My Tesla</h1>
-    <div id="demo" align='center'>
-        <a href='/vehicle'>
+<body id='body'>
+    <div id='grey'>
+         <h1 id='title'>Find My Smart Car</h1>
+            <div id="demo" align='center'>
+                <a href='/vehicle'>
 
-        <button id='button'  type="button" class='btn btn-outline-danger' onclick="loadDoc('53.660104', '79.396850')">Locate Tesla</button>
+                <button id='button'  type="button" class='btn btn-outline-danger' onclick="loadDoc('53.660104', '79.396850')">Locate Smart Car</button>
 
-   </a>
+           </a>
+            </div>
+    </div>
+    <div class='container' id='photo'>
+        <div class='row'>
+            <div class='col-12'>
+                <img class="img-fluid" alt="Responsive image" src="car.jpg">
+
+                <footer>
+                    <hr id='hr'>
+                    <div id='info'>
+                        This app was developed by: Tiago, Kevin, Paramveer, and Shan &copy; 2018
+                    </div>
+                </footer>
+            </div>
+        </div>
     </div>
 
 
@@ -40,5 +98,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
 </body>
 </html>
