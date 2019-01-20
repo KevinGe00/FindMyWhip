@@ -1,8 +1,8 @@
 import smartcar
 from flask import Flask, redirect, request, jsonify, render_template
 from flask_cors import CORS
+import geocoder
 
-import os
 
 app = Flask(__name__)
 CORS(app)
@@ -47,13 +47,19 @@ def vehicle():
 
     # instantiate the first vehicle in the vehicle id list
     vehicle = smartcar.Vehicle(vehicle_ids[0], access['access_token'])
-
+    myloc = geocoder.ip("me")
+    print(myloc.latlng)
     info = vehicle.info()
     print(info)
     response = vehicle.location()
     print(response)
     print(response["data"]["latitude"])
-    return render_template('MapPage.html', car_long=response["data"]["longitude"], car_lat = response["data"]["latitude"])
+    car_long = response["data"]["longitude"]
+    car_lat = response["data"][ "latitude"]
+    my_lat = myloc.latlng[0]
+    my_long = myloc.latlng[1]
+    url = "https://www.google.com/maps/embed/v1/directions?origin=" + str(my_lat) + ",+" + str(my_long) + "&destination=" + str(car_lat)+ ",+" + str(car_long)+ "&key=AIzaSyA7J_WSo3Cefq_Q9-NhUW8ievnZw7J2cHE&"
+    return render_template('MapPage.html', url=url)
 
 
 @app.route('/FindMyWhip', methods=['GET'])
