@@ -12,12 +12,18 @@
             text-align: center;
             margin: 5px;
             margin-bottom: 20px;
+            font-size: 200%;
+            font-weight: bold;
+        }
+        #demo {
+            margin-top: 20px;
         }
     </style>
 
     <title>FindMyWhip</title>
 </head>
 <body>
+    <h2 id='title'>Your Automotives location is at: ({{car_lat}},{{car_long}})</h2>
     <div id="demo" align='center'>
                         <iframe width='600' height='450' frameborder='0'  style='border:0' src='https://www.google.com/maps/embed/v1/directions?origin=" + 53.660104 + ",+-" + 79.45 + "&destination=" + {{car_lat}} + ",+-" + {{car_long}} + "0&key=AIzaSyA7J_WSo3Cefq_Q9-NhUW8ievnZw7J2cHE&' allowfullscreen></iframe>
 
