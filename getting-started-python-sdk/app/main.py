@@ -1,6 +1,7 @@
 import smartcar
 from flask import Flask, redirect, request, jsonify, render_template
 from flask_cors import CORS
+import Math
 
 import os
 
@@ -53,7 +54,8 @@ def vehicle():
     response = vehicle.location()
     print(response)
     print(response["data"]["latitude"])
-    return render_template('MapPage.html', car_long=response["data"]["longitude"], car_lat = response["data"]["latitude"])
+    
+    return render_template('MapPage.html', car_long=response["data"]["longitude"], car_lat=response["data"]["latitude"])
 
 
 @app.route('/FindMyWhip', methods=['GET'])
