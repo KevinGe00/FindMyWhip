@@ -12,28 +12,57 @@
             box-sizing: border-box;
         }
         #body {
-            background-image: url('car.jpg');
+            background-color: #F0FAF8;
         }
         #title {
             text-align: center;
             margin: 5px;
             margin-bottom: 20px;
-            font-size: 200%;
+            font-size: 3x00%;
             font-weight: bold;
+            font-family: Impact, Charcoal, sans-serif;
         }
         #demo {
             margin-top: 20px;
+        }
+        #dis {
+            text-align: center;
+            font-weight: bold;
+            font-size: 200%;
+        }
+        #frame {
+            max-width: max-content;
+        }
+        #carloc {
+            margin: 20px;
         }
     </style>
 
     <title>FindMyWhip</title>
 </head>
 <body id='body'>
-    <h2 id='title'>Your Automotives location is at: ({{car_lat}},{{car_long}})</h2>
-    <div id="demo" align='center'>
-                        <iframe width='600' height='450' frameborder='0'  style='border:0' src='https://www.google.com/maps/embed/v1/directions?origin=" + 53.660104 + ",+-" + 79.45 + "&destination=" + {{car_lat}} + ",+-" + {{car_long}} + "0&key=AIzaSyA7J_WSo3Cefq_Q9-NhUW8ievnZw7J2cHE&' allowfullscreen></iframe>
 
+    <center><div id='carloc'>
+        <img src="https://fontmeme.com/temporary/45677b9429b20ee64593455bf6be3bc1.png">
+    </div></center>
+
+    <div class='container'>
+        <div class='row'>
+            <div id="demo" class='col-xs-12 col-s-6'>
+                 <iframe id='frame' width='600' height='450' frameborder='0'  style='border:0' src={{url}} allowfullscreen></iframe>
+            </div>
+            <div id='demo' class='col-xs-12 col-s-6'>
+                <img src="{{url2}}">
+            </div>
+            
+        </div>
+        
     </div>
+
+    <div id='dis'>{{caption}}</div>
+   
+    <div id='dis'>Distance from car: {{dist}} meters</div>
+
 
 
 
