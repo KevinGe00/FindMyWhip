@@ -1,4 +1,4 @@
-# FindMyWhip
+# FindMySmartCar
 
 This project was developed in a four person team including an experienced third year developer, a third year electrical engineer, a first year computer science student, and myself. 
 
