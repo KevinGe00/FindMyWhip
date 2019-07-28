@@ -21,8 +21,8 @@ CORS(app)
 access = None
 
 client = smartcar.AuthClient(
-    client_id= '7126d3ad-f1bf-4712-b484-2e450efa1d5f',
-    client_secret='36f18730-00e6-4b36-ae24-adbb44b59fa8',
+    client_id= '',
+    client_secret='',
     redirect_uri='http://localhost:8000/exchange',
     scope=['read_vehicle_info', 'read_location'],
     test_mode=True
@@ -78,7 +78,7 @@ def vehicle():
     print(car_long)
 
     # ROADS API
-    analyze_url = 'https://roads.googleapis.com/v1/nearestRoads?points=' + str(car_lat) + ',' + str(car_long) + '&key=AIzaSyA7J_WSo3Cefq_Q9-NhUW8ievnZw7J2cHE'
+    analyze_url = 'https://roads.googleapis.com/v1/nearestRoads?points=' + str(car_lat) + ',' + str(car_long) + ''
 
     response = requests.post(analyze_url)
     response.raise_for_status()
@@ -100,8 +100,8 @@ def vehicle():
 
     # END
 
-    url2='https://maps.googleapis.com/maps/api/streetview?location=' + lat + ',' + long + '&size=456x456&key=AIzaSyA7J_WSo3Cefq_Q9-NhUW8ievnZw7J2cHE'
-    url = "https://www.google.com/maps/embed/v1/directions?origin=" + str(my_lat) + ",+" + str(my_long) + "&destination=" + str(car_lat)+ ",+" + str(car_long)+ "&key=AIzaSyA7J_WSo3Cefq_Q9-NhUW8ievnZw7J2cHE&"
+    url2='https://maps.googleapis.com/maps/api/streetview?location=' + lat + ',' + long + '&size=456x456&key='
+    url = "https://www.google.com/maps/embed/v1/directions?origin=" + str(my_lat) + ",+" + str(my_long) + "&destination=" + str(car_lat)+ ",+" + str(car_long)+ "&key="
 
     caption = computer_vision(url2)
     print(caption)
@@ -124,7 +124,7 @@ def incorrect_pass():
 
 def computer_vision(url: str) -> None:
     # Replace <Subscription Key> with your valid subscription key.
-    subscription_key = "39aaf6a3b88746d59cfeadad094e4d5c"
+    subscription_key = ""
     assert subscription_key
 
     vision_base_url = \
